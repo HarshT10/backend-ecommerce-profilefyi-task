@@ -5,16 +5,16 @@ import userRoutes from "./routes/users.js";
 
 const app = express();
 
-const corsOptions = {
-  origin: "https://e-commerce-profilefyi-task.vercel.app/", // Replace with your frontend's URL
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
+// const corsOptions = {
+//   origin: "https://e-commerce-profilefyi-task.vercel.app/",
+//   methods: ["GET", "POST"],
+//   allowedHeaders: ["Content-Type", "Authorization"],
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: true }));
 
 // Connect to MongoDB
 connectDB();
