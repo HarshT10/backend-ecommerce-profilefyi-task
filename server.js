@@ -4,6 +4,15 @@ import connectDB from "./utils/db.js";
 import userRoutes from "./routes/users.js";
 
 const app = express();
+
+const corsOptions = {
+  origin: "https://e-commerce-profilefyi-task.vercel.app/", // Replace with your frontend's URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(cors());
 
